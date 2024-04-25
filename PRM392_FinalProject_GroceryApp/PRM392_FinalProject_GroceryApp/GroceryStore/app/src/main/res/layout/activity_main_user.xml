@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activities.MainUserActivity">
+
+    <RelativeLayout
+        android:id="@+id/rlToolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/shape_rect01"
+        android:padding="10dp">
+
+        <ImageButton
+            android:id="@+id/btnLogout"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_alignParentEnd="true"
+            android:background="@null"
+            android:src="@drawable/ic_logout_white" />
+
+        <ImageButton
+            android:id="@+id/btnEditProfile"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_toStartOf="@+id/btnLogout"
+            android:background="@null"
+            android:src="@drawable/ic_edit_white" />
+        <!--setting button-->
+
+        <com.blogspot.atifsoftwares.circularimageview.CircularImageView
+            android:id="@+id/ivProfile"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:layout_marginEnd="10dp"
+            android:src="@drawable/ic_store_grey"
+            app:c_border="true"
+            app:c_border_color="@color/colorWhite" />
+
+        <TextView
+            android:id="@+id/tvName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@id/ivProfile"
+            android:text="Tên"
+            android:textColor="@color/colorWhite"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tvEmail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tvName"
+            android:layout_toEndOf="@id/ivProfile"
+            android:text="Email"
+            android:textColor="@color/colorWhite" />
+
+        <TextView
+            android:id="@+id/tvPhone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tvEmail"
+            android:layout_toEndOf="@id/ivProfile"
+            android:text="Số điện thoại"
+            android:textColor="@color/colorWhite" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_below="@id/ivProfile"
+            android:layout_marginTop="5dp"
+            android:background="@drawable/shape_rect03"
+            android:orientation="horizontal">
+
+            <!--Shops-->
+            <TextView
+                android:id="@+id/tvTabShops"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/shape_rect04"
+                android:gravity="center"
+                android:text="Cửa hàng"
+                android:textColor="@color/colorBlack" />
+
+            <!--Orders-->
+            <TextView
+                android:id="@+id/tvTabOrders"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/shape_rect04"
+                android:gravity="center"
+                android:text="Đơn hàng"
+                android:textColor="@color/colorBlack" />
+        </LinearLayout>
+
+    </RelativeLayout>
+
+    <!--Shop UI-->
+    <RelativeLayout
+        android:id="@+id/rlShops"
+        android:layout_below="@id/rlToolbar"
+        android:layout_width="match_parent"
+        android:visibility="gone"
+        android:layout_height="match_parent">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvShops"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            tools:listitem="@layout/row_shop"/>
+
+    </RelativeLayout>
+
+    <!--Order UI-->
+    <RelativeLayout
+        android:visibility="gone"
+        android:id="@+id/rlOrders"
+        android:layout_below="@id/rlToolbar"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <!--recyclerview: show order-->
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/ordersRv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:stackFromEnd="true"
+            app:reverseLayout="true"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            tools:listitem="@layout/row_order_user"/>
+    </RelativeLayout>
+</RelativeLayout>

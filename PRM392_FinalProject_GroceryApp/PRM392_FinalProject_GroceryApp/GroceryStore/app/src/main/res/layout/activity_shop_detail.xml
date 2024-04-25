@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activities.ShopDetailActivity">
+
+    <!--Shop Details-->
+    <RelativeLayout
+        android:id="@+id/rlShops"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        tools:ignore="NotSibling">
+
+        <ImageView
+            android:id="@+id/ivShop"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"
+            android:src="@color/colorGray02" />
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="#79000000" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="48dp"
+            android:padding="10dp">
+
+            <TextView
+                android:id="@+id/tvShopName"
+                style="@style/TextAppearance.AppCompat.Title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="3dp"
+                android:text="Tên Cửa Hàng"
+                android:textColor="@color/colorWhite" />
+
+            <TextView
+                android:id="@+id/tvPhone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tvShopName"
+                android:layout_marginStart="3dp"
+                android:text="Số điện thoại"
+                android:textColor="@color/colorWhite" />
+
+            <TextView
+                android:id="@+id/tvEmail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tvPhone"
+                android:layout_marginStart="3dp"
+                android:text="Email"
+                android:textColor="@color/colorWhite" />
+
+            <TextView
+                android:id="@+id/tvOpenClose"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_marginStart="3dp"
+                android:padding="5dp"
+                android:text="Mở"
+                android:textColor="@color/colorWhite" />
+
+            <TextView
+                android:id="@+id/tvDeliveryFee"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tvOpenClose"
+                android:layout_alignParentEnd="true"
+                android:layout_marginStart="3dp"
+                android:padding="5dp"
+                android:text="Phí vận chuyển"
+                android:textColor="@color/colorWhite" />
+
+            <TextView
+                android:id="@+id/tvAddress"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tvEmail"
+                android:layout_marginStart="3dp"
+                android:layout_marginTop="10dp"
+                android:text="Địa chỉ"
+                android:textColor="@color/colorWhite" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:gravity="center_horizontal"
+                android:orientation="horizontal">
+
+                <ImageButton
+                    android:id="@+id/btnCall"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@null"
+                    android:src="@drawable/ic_call_white" />
+
+                <ImageButton
+                    android:id="@+id/btnMap"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="5dp"
+                    android:background="@null"
+                    android:src="@drawable/ic_map_white" />
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+        <!--Toolbar-->
+        <RelativeLayout
+            android:id="@+id/rlToolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/shape_rect01"
+            android:padding="10dp">
+
+            <ImageButton
+                android:id="@+id/btnCart"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_alignParentEnd="true"
+                android:background="@null"
+                android:layout_marginTop="8dp"
+                android:src="@drawable/ic_cart_grey" />
+
+            <ImageButton
+                android:id="@+id/btnBack"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:background="@null"
+                android:src="@drawable/ic_back_white" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:text="Thông tin cửa hàng"
+                android:textColor="@color/colorWhite"
+                android:textSize="20sp" />
+            <TextView
+                android:id="@+id/cartCountTv"
+                android:textColor="@color/colorWhite"
+                android:background="@drawable/shape_circle03"
+                android:gravity="center"
+                android:layout_alignParentEnd="true"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:text="10"
+                android:textSize="8dp"/>
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+    <!--Products-->
+    <RelativeLayout
+        android:id="@+id/rlProducts"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/rlShops">
+
+        <!--Search-->
+        <EditText
+            android:id="@+id/edtSearchProduct"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:layout_toStartOf="@+id/btnFilterProduct"
+            android:background="@drawable/shape_rect02"
+            android:drawableStart="@drawable/ic_search_gray"
+            android:drawablePadding="10dp"
+            android:hint="Tìm kiếm"
+            android:padding="10dp" />
+
+        <!--filter product-->
+        <ImageButton
+            android:id="@+id/btnFilterProduct"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="5dp"
+            android:background="@null"
+            android:scaleType="fitXY"
+            android:src="@drawable/ic_filter_gray" />
+
+        <!--show filtered products title-->
+        <TextView
+            android:id="@+id/tvFilteredProduct"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/edtSearchProduct"
+            android:layout_marginStart="5dp"
+            android:text="Hiện thị tất cả"
+            android:textColor="@color/colorBlack" />
+
+        <!--Recycleview: Show products-->
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvProducts"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/tvFilteredProduct"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            tools:listitem="@layout/row_product_seller" />
+
+    </RelativeLayout>
+
+
+</RelativeLayout>
